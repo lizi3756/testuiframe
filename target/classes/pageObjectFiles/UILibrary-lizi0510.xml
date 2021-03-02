@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--整个对象库文件的根目录，管理整个项目的对象-->
+<map>
+
+	<page pagename="com.lizi.ui.auto.pageObject.HomePage" value="" desc="mtx首页">
+		<locator type="linkText" timeout="3" value="登录"  desc="登录链接">loginlink</locator>
+		<locator type="cssSelector" timeout="3" value=".goods-items"  desc="商品">firstgoods</locator>
+		<locator type="cssSelector" timeout="3" value=".am-icon-fw.am-icon-user"  desc="个人中心">personcenter</locator>
+	</page>
+
+	<page pagename="com.lizi.ui.auto.pageObject.LoginPage" value="" desc="登录页面">
+		<locator type="xpath" timeout="3" value="//*[@name='accounts']"  desc="用户名">username</locator>
+		<locator type="name" timeout="3" value="pwd"  desc="密码">password</locator>
+		<locator type="className" timeout="3" value="btn-loading-example"  desc="登录按钮">loginBtn</locator>
+	</page>
+
+	<page pagename="com.lizi.ui.auto.pageObject.RegisterPage" value="" desc="商城注册">
+		<locator type="linkText" timeout="3" value="注册"  desc="注册按钮">registerbutton</locator>
+		<locator type="name" timeout="3" value="accounts"  desc="用户名">username</locator>
+		<locator type="name" timeout="3" value="pwd"  desc="密码">password</locator>
+		<locator type="xpath" timeout="3" value="//i[@class='am-icon-checked']"  desc="服务协议">serviceagreement</locator>
+		<locator type="className" timeout="3" value="btn-loading-example"  desc="注册">register</locator>
+	</page>
+
+	<page pagename="com.lizi.ui.auto.pageObject.GoodsDetailPage" value="" desc="商品详情页">
+		<locator type="xpath" timeout="20" value="//*[text()='立即购买']"  desc="立即购买">buy</locator>
+	</page>
+	<page pagename="com.lizi.ui.auto.pageObject.GoodsOrderPage" value="" desc="商品下单页">
+		<locator type="xpath" timeout="20" value="//*[text()='货到付款']/.."  desc="货到付款">货到付款</locator>
+		<locator type="cssSelector" timeout="20" value="[title='点击此按钮，提交订单']"  desc="提交订单">提交订单</locator>
+	</page>
+
+
+
+
+</map>
