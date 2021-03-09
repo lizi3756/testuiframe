@@ -25,4 +25,7 @@ public class TestBase {
         //driver.findElement(By.className("submitPut")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);//隐式等待
     }
+
+
+
 }

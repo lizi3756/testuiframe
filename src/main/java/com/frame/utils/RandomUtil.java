@@ -5,6 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
+import static java.lang.Math.abs;
+
 public class RandomUtil {
 	/**
 	 * 随机生成指定长度的字符串
@@ -75,7 +77,7 @@ public class RandomUtil {
 		Random rnd = new Random();
 
 		while (count < lengthOfNumber) {
-			i = Math.abs(rnd.nextInt(10));//生成[0,9)的随机数
+			i = abs(rnd.nextInt(10));//生成[0,9)的随机数
 			if (i == 0 && count == 0) {
 				//意思是不生成开始为0的数字，比如098,01
 			} else {
@@ -133,27 +135,18 @@ public class RandomUtil {
         int s = random.nextInt(max)%(max-min+1) + min;
         return s;
 	}
-//	/**
-//	 * 从字符串里提取整数  dsd234dsf455h34h232h34545
-//	 * @param str  目标字符串
-//	 * @param index 提取第几组数字，从0开始
-//	 * @return 返回一个整数，如果返回-1则表明你提取的组数不存在
-//	 */
-//	public static int getInt(String str,int index){
-//		Pattern p = Pattern.compile("\\d{1,}");//这个1是指连续数字的最少个数
-//        Matcher m = p.matcher(str);
-//        List<Integer> result=new ArrayList<Integer>();
-//        while (m.find()) {
-//           // System.out.println(m.group());
-//            result.add(Integer.valueOf(m.group()));
-//        }
-//        if(!result.isEmpty()&&index<result.size()){
-//        	return result.get(index);
-//        }else{
-//        	System.out.println("你要找的第"+(index+1)+"组数字不存在");
-//        	return -1;
-//        }
-//	}
+	public static int randomint(int min,int max){
+		int i = (int) (Math.random() * (max - min) + min);
+		return  i;
+	}
+	public  static  String  time(){
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+		String time = formatter.format(new Date());
+		return time;
+	}
+
+
+
 
 	/**
 	 * 随机生成指定范围内的日期
@@ -179,9 +172,9 @@ public class RandomUtil {
     }
 	public static void main(String[] args) {
 
-
-		System.out.println(getExtentRandomNumber(5));
-		System.out.println(getExtentRandomNumber1(5));
+		System.out.println(randomint(4,10));
+		//System.out.println(getExtentRandomNumber(5));
+		//System.out.println(getExtentRandomNumber1(5));
 //		Random r=new Random();
 //		System.out.println(getExtentRandomNumber(4));
 //		System.out.println(randomFloat(10,100));

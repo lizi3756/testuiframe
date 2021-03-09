@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--整个对象库文件的根目录，管理整个项目的对象-->
 <map>
-	<page pagename="com.ui.pageObject.HomePage" value="" desc="登录">
-		<locator type="id" timeout="3" value="username"  desc="用户名">username</locator>
-		<locator type="id" timeout="3" value="password"  desc="密码">password</locator>
-		<locator type="id" timeout="3" value="input-btn"  desc="登录按钮">login</locator>
-	</page>
-	<page pagename="com.ui.pageObject.AddCarPage" value="" desc="车商录入">
+
+	<page pagename="com.ui.pageObject.AddCar" value="" desc="车商录入">
 		<locator type="xpath" timeout="3" value="//*[@name='cdCustomerType'][4]"  desc="商户类型">cdCustomerType</locator>
 		<locator type="id" timeout="3" value="companyName"  desc="商户名称">companyName</locator>
 		<locator type="name" timeout="3" value="city"  desc="所属城市">city</locator>
 		<locator type="xpath" timeout="3" value="//option[text()='bj-北京']"  desc="所属城市">beijing</locator>
 		<locator type="id" timeout="3" value="marketType"  desc="所属市场">marketType</locator>
-		<locator type="xpath" timeout="3" value="//option[text()='场外1']"  desc="场外">changwai</locator>
+		<locator type="xpath" timeout="3" value="//option[text()='场外']"  desc="场外">changwai</locator>
 		<locator type="id" timeout="3" value="doorTitle"  desc="门头照片">doorTitle</locator>
 		<locator type="xpath" timeout="3" value="//input[@name='industryType']"  desc="行业">industryType</locator>
 		<locator type="xpath" timeout="3" value="//span[text()='保存车商']"  desc="保存车商">save</locator>
 
 	</page>
-
 </map>

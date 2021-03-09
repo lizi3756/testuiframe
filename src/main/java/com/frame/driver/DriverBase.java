@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Driver;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +39,7 @@ public class DriverBase {
 				if(Command.isWin()){
 					System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_mac.exe");
 				}else if(Command.isMac()){
-					System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_mac");
+					System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_88");
 				}else {
 					System.setProperty("webdriver.chrome.driver", "drivers/chromedriver_linux");
 				}
@@ -250,6 +251,7 @@ public class DriverBase {
 		}
     	return time+filename;
     }
+	//针对整个页面截图
     public String getScreenShot(String path,String filename) {
         SimpleDateFormat formatter = new SimpleDateFormat( "yyyyMMdd-HHmmss" );
         String time=formatter.format(new Date()).toString();
@@ -268,6 +270,9 @@ public class DriverBase {
 		driver.close();
 		log.info("当前界面关闭");
 	}
-
-
+	public void skipCookies(String cookies){
+		driver.manage().deleteAllCookies();
+		Cookie cookie = new Cookie("PHPSESSID", cookies);
+		driver.manage().addCookie(cookie);
+	}
 }

@@ -6,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.internal.TouchAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -65,7 +64,8 @@ public class ElementOperate {
 	 * @return
 	 */
 	public String sendKeysDiff(ElementBeans elementBeans, int length) {
-		String currentName = this.getAttribute(elementBeans, "value");
+		String currentName = driver.findElement(elementBeans).getText();
+		//String currentName = this.getAttribute(elementBeans, "value");
 		String newName = RandomUtil.getRndStrZhByLen(length);
 		while (currentName.equals(newName)) {
 			newName = RandomUtil.getRndStrZhByLen(length);
@@ -97,7 +97,7 @@ public class ElementOperate {
 		driver.findElement(elementBeans).clear();
 		log.info("清除【" + elementBeans.getElementName() + "】成功");
 	}
-
+	//针对元素截图
 	public void getScreenshotAs(ElementBeans elementBeans, String filename) {
 		File file = driver.findElement(elementBeans).getScreenshotAs(OutputType.FILE);
 		try {
@@ -160,7 +160,7 @@ public class ElementOperate {
 	/**
 	 * 该方法用于随机选择下拉框里和当前选中的值不一样的值
 	 *
-	 * @param locator
+	 * @param
 	 * @return
 	 */
 	public String selectRandomOption(ElementBeans elementBeans) {
