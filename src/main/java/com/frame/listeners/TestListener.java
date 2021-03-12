@@ -3,6 +3,7 @@ package com.frame.listeners;
 
 import com.frame.TestBase.ESCTestBase;
 
+import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -14,6 +15,7 @@ import java.util.*;
 public class TestListener implements ITestListener {
 
 
+    private static final Logger LOGGER = Logger.getLogger(TestListener.class);
     @Override
     public void onFinish(ITestContext testContext) {
         // super.onFinish(testContext);
@@ -85,7 +87,7 @@ public class TestListener implements ITestListener {
 		Reporter.log(result.getName() + " Failure");
 //        Retry retry = (Retry) result.getMethod().getRetryAnalyzer();
 //        retry.resetRetrycount();
-		//result.getInstance();
+
         ESCTestBase t = (ESCTestBase)result.getInstance();
         String filename = result.getName()+".png";
         String screenShot = t.driver.getScreenShot(filename);

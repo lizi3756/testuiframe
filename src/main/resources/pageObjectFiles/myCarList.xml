@@ -16,6 +16,13 @@
 		<locator type="id" timeout="3" value="doorTitle"  desc="门头照片">doorTitle</locator>
 		<locator type="xpath" timeout="3" value="//input[@name='industryType']"  desc="行业">industryType</locator>
 		<locator type="xpath" timeout="3" value="//span[text()='保存车商']"  desc="保存车商">save</locator>
+	</page>
+	<page pagename="com.ui.pageObject.CarListPage" value="" desc="我的车商列表页">
+		<locator type="xpath" timeout="3" value="//*[text()='市场：']//following-sibling::div//input"  desc="市场">market</locator>
+		<locator type="xpath" timeout="3" value="//span[text()='场外']"  desc="场外">market1</locator>
+		<locator type="xpath" timeout="3" value="//*[text()='审核状态：']//following-sibling::div//div//label[3]//span//span"  desc="查询">status</locator>
+		<locator type="xpath" timeout="3" value="//div[text()='未通过-改']"  desc="未通过-改">nopass</locator>
+		<locator type="xpath" timeout="3" value="//span[text()='查询']"  desc="查询">search</locator>
 
 	</page>
 

@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Driver;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -237,6 +236,7 @@ public class DriverBase {
     public void quit() {
     	driver.quit();
     }
+
     public String getScreenShot(String filename) {
         SimpleDateFormat formatter = new SimpleDateFormat( "yyyyMMdd-HHmmssSSS" );
         String time=formatter.format(new Date()).toString();

@@ -15,7 +15,6 @@ import java.util.HashMap;
 public class BasePage {
 
 	public DriverBase driver;
-	public String platform;
 	public String pagePath="src/main/resources/pageObjectFiles/myCarList.xml";
 	HashMap<String, ElementBeans> locatorMap;//{"username":elementbeans,"password":elementbeans,"loginBtn":elementbeans}
 

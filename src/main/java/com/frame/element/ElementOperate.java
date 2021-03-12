@@ -9,6 +9,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
+
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -78,6 +80,7 @@ public class ElementOperate {
 	public void click(ElementBeans elementBeans) {
 		driver.findElement(elementBeans).click();
 		log.info("点击【" + elementBeans.getElementName() + "】成功");
+		Reporter.log("点击【" + elementBeans.getElementName() + "】成功");
 	}
 
 	public void clickToBeClickable(ElementBeans elementBeans) {

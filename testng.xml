@@ -9,9 +9,11 @@
 
 	</listeners>
 
-	<test name="mtx商城">
+	<test name="二手车">
 		<classes>
+			<class name="frame.CarListTest" />
 			<class name="frame.AddCarTest" />
+
 
 		</classes>
 	</test>
